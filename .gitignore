@@ -1,0 +1,32 @@
+# Serverless directories
+# NOTE: committed to git in order to share state
+#.serverless
+.serverless/*zip
+node_modules
+
+# golang output binary directory
+bin
+
+# golang vendor (dependencies) directory
+vendor
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+cacher/cache/*
+
+scratchfile*
+
+.vscode
+.idea
+.DS_Store
+
