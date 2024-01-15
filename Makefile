@@ -1,4 +1,4 @@
-.PHONY: build clean deploy
+.PHONY: build clean deploy test
 
 build:
 	env GOARCH=amd64 GOOS=linux go build -ldflags="-s -w" -o bin/hello hello/main.go
@@ -9,3 +9,6 @@ clean:
 
 deploy: clean build
 	sls deploy --verbose
+
+test:
+	 go test ./...
