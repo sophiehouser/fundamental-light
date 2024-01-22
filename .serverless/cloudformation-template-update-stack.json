@@ -167,13 +167,18 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/fundamental-light/dev/1705613962929-2024-01-18T21:39:22.929Z/fundamental-light.zip"
+          "S3Key": "serverless/fundamental-light/dev/1705965354319-2024-01-22T23:15:54.319Z/fundamental-light.zip"
         },
         "Handler": "bin/hello",
         "Runtime": "go1.x",
         "FunctionName": "fundamental-light-dev-hello",
         "MemorySize": 1024,
         "Timeout": 6,
+        "Environment": {
+          "Variables": {
+            "IS_LOCAL": "true"
+          }
+        },
         "Role": {
           "Fn::GetAtt": [
             "IamRoleLambdaExecution",
@@ -192,13 +197,18 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/fundamental-light/dev/1705613962929-2024-01-18T21:39:22.929Z/fundamental-light.zip"
+          "S3Key": "serverless/fundamental-light/dev/1705965354319-2024-01-22T23:15:54.319Z/fundamental-light.zip"
         },
         "Handler": "bin/world",
         "Runtime": "go1.x",
         "FunctionName": "fundamental-light-dev-world",
         "MemorySize": 1024,
         "Timeout": 6,
+        "Environment": {
+          "Variables": {
+            "IS_LOCAL": "true"
+          }
+        },
         "Role": {
           "Fn::GetAtt": [
             "IamRoleLambdaExecution",
@@ -210,24 +220,24 @@
         "WorldLogGroup"
       ]
     },
-    "HelloLambdaVersionykC63GvThQ4k14jks4xspNeqwOkjN7WbUEKXFJLY": {
+    "HelloLambdaVersioncR8H9HdhfIGQPnlLjm6k8ciDDHmrxrEgDOKJPUQnFFI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "HelloLambdaFunction"
         },
-        "CodeSha256": "ww64VZbDvX10x+EopC/inRX/GcIzYwJlPoDh31KEa+Y="
+        "CodeSha256": "Gk6A0wV5mbhUdrrLrMkxVIFRlsOp0EdTE+C7j+xka3Q="
       }
     },
-    "WorldLambdaVersionBeNtDGswSt81P6vW2bNff77qBEH3tVhVa0PpwU2GliI": {
+    "WorldLambdaVersion6gfrWCvhGWzVKxaAUGLSgNP4epoRJl10u56rk2cM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "WorldLambdaFunction"
         },
-        "CodeSha256": "ww64VZbDvX10x+EopC/inRX/GcIzYwJlPoDh31KEa+Y="
+        "CodeSha256": "Gk6A0wV5mbhUdrrLrMkxVIFRlsOp0EdTE+C7j+xka3Q="
       }
     },
     "ApiGatewayRestApi": {
@@ -303,7 +313,7 @@
         "HelloLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1705613960819": {
+    "ApiGatewayDeployment1705965351401": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -460,7 +470,7 @@
     "HelloLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "HelloLambdaVersionykC63GvThQ4k14jks4xspNeqwOkjN7WbUEKXFJLY"
+        "Ref": "HelloLambdaVersioncR8H9HdhfIGQPnlLjm6k8ciDDHmrxrEgDOKJPUQnFFI"
       },
       "Export": {
         "Name": "sls-fundamental-light-dev-HelloLambdaFunctionQualifiedArn"
@@ -469,7 +479,7 @@
     "WorldLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "WorldLambdaVersionBeNtDGswSt81P6vW2bNff77qBEH3tVhVa0PpwU2GliI"
+        "Ref": "WorldLambdaVersion6gfrWCvhGWzVKxaAUGLSgNP4epoRJl10u56rk2cM"
       },
       "Export": {
         "Name": "sls-fundamental-light-dev-WorldLambdaFunctionQualifiedArn"
